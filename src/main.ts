@@ -6,6 +6,7 @@ import SwaggerConfig from './config/swagger.config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.enableCors();
 
   const document = SwaggerModule.createDocument(app, SwaggerConfig);
   SwaggerModule.setup('/api/turkpazar', app, document);
