@@ -29,9 +29,12 @@ export default class FetchCatalogCategory {
     }
   }
 
-  static async getById(id: number) {
+  static async getById(id: number, params: any = {}) {
     try {
-      const url = `https://api.turkpazar.ru/api/catalog/category/${id}`;
+      const urlParams = Object.keys(params)
+        .map((key) => `${key}=${params[key]}`)
+        .join('&');
+      const url = `https://api.turkpazar.ru/api/catalog/category/${id}/?${urlParams}`;
 
       const response = await axios.get(url);
       const result: TprFetchResponseDto = {
