@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  dockerfile-turkpazar-backend:
+    container_name: dockerfile-turkpazar-backend
+    restart: always
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 5555:5555
+    command: >
+        bash -c "
+          yarn build
+          yarn start"
