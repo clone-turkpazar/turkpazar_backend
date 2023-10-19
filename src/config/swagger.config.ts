@@ -31,10 +31,28 @@ const SwaggerConfig = new DocumentBuilder()
       '      - в URL нет версии API (например, `/api/v1/`) \n' +
       '    - Стало: \n' +
       '      - GET `/api/turkpazar/v1/catalog/items/{id}` \n' +
+      '- Операции с категориями: \n' +
+      '  - Получение массива категорий: \n' +
+      '    - Было: \n' +
+      '      - GET `/api/catalog/category` \n' +
+      '    - Ошибки: \n' +
+      '      - нарушена технология REST API, так как указан `category`, а не `categories` \n' +
+      '      - в URL нет версии API (например, `/api/v1/`) \n' +
+      '    - Стало: \n' +
+      '      - GET `/api/turkpazar/v1/catalog/categories` \n' +
+      '  - Получение категории по id: \n' +
+      '    - Было: \n' +
+      '      - GET `/api/catalog/category/{id}` \n' +
+      '    - Ошибки: \n' +
+      '      - нарушена технология REST API, так как указан `category/{id}`, а не `categories/{id}` \n' +
+      '      - в URL нет версии API (например, `/api/v1/`) \n' +
+      '    - Стало: \n' +
+      '      - GET `/api/turkpazar/v1/catalog/categories/{id}` \n' +
       '\n\n',
   )
   .setVersion('1.0.0')
   .addTag('api_turkpazar_v1_catalog_items', 'Операции с номенклатурой')
+  .addTag('api_turkpazar_v1_catalog_categories', 'Операции с категориями')
   .addBearerAuth(
     {
       type: 'http',

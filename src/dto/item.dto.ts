@@ -91,8 +91,8 @@ export default class ItemDto {
   @ApiProperty()
   count: number;
 
-  @ApiProperty()
-  images: ItemImageDto[];
+  @ApiProperty({ type: [ItemImageDto] })
+  images: [ItemImageDto];
 
   @ApiProperty()
   vid: string;

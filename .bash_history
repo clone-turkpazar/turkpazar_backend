@@ -5,4 +5,4 @@ yarn add @nestjs/swagger
 yarn add swagger-ui-express
 
 yarn nest g res rest/api/turkpazar/v1/catalog/items
-yarn nest g res rest/api/turkpazar/v1/catalog/item
+yarn nest g res rest/api/turkpazar/v1/catalog/categories
